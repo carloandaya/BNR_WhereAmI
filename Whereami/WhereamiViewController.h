@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface WhereamiViewController : UIViewController
+@interface WhereamiViewController : UIViewController <CLLocationManagerDelegate>
 {
     // CLLocationManager is the class that interfaces with the location
     // hardware of the device.
     CLLocationManager *locationManager;
 }
+
 @end

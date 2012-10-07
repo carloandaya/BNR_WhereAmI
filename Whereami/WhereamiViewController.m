@@ -22,15 +22,31 @@
         // Create location manager object
         locationManager = [[CLLocationManager alloc] init];
         
+        // set the delegate of location manager to the view controller
+        [locationManager setDelegate:self];
+        
         // And we want it to be as accurate as possible
         // regardless of how much time/power it takes
         [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        
+        [locationManager setDistanceFilter:50];
         
         // Tell our manager to start looking for its location immediately
         [locationManager startUpdatingLocation];
     }
     
     return self;
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    NSLog(@"%@", [locations lastObject]);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Could not find location: %@", error);
 }
 
 - (void)viewDidLoad
@@ -43,6 +59,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [locationManager setDelegate:nil];
 }
 
 @end
