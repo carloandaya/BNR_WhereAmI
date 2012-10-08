@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface WhereamiViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
+@interface WhereamiViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate>
 {
     // CLLocationManager is the class that interfaces with the location
     // hardware of the device.
@@ -20,5 +20,15 @@
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITextField *locationTitleField;
 }
+
+// findLocation will tell the locationManager to start looking for the current location.
+// It will also update the user interface so that the user can't re-enter text into the
+// text field and will start the activity indicator spinning.
+- (void)findLocation;
+
+// foundLocation will create an instance of BNRMapPoint and add it to the worldView.
+// It will also handle the map's zoom and reset the states of the UI elements
+// and the locationManager.
+- (void)foundLocation:(CLLocation *)loc;
 
 @end
