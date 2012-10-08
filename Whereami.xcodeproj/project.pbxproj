@@ -19,6 +19,7 @@
 		23A77FA6161E86100054A129 /* WhereamiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A77FA5161E86100054A129 /* WhereamiViewController.m */; };
 		23A77FA9161E86100054A129 /* WhereamiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A77FA7161E86100054A129 /* WhereamiViewController.xib */; };
 		23A77FB0161E87000054A129 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A77FAF161E87000054A129 /* CoreLocation.framework */; };
+		23F47B58162252E1009893E4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F47B57162252E1009893E4 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		23A77FA5161E86100054A129 /* WhereamiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhereamiViewController.m; sourceTree = "<group>"; };
 		23A77FA8161E86100054A129 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WhereamiViewController.xib; sourceTree = "<group>"; };
 		23A77FAF161E87000054A129 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		23F47B57162252E1009893E4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F47B58162252E1009893E4 /* MapKit.framework in Frameworks */,
 				23A77FB0161E87000054A129 /* CoreLocation.framework in Frameworks */,
 				23A77F8D161E86100054A129 /* UIKit.framework in Frameworks */,
 				23A77F8F161E86100054A129 /* Foundation.framework in Frameworks */,
@@ -59,6 +62,7 @@
 		23A77F7D161E860F0054A129 = {
 			isa = PBXGroup;
 			children = (
+				23F47B57162252E1009893E4 /* MapKit.framework */,
 				23A77F92161E86100054A129 /* Whereami */,
 				23A77F8B161E860F0054A129 /* Frameworks */,
 				23A77F89161E860F0054A129 /* Products */,
@@ -297,6 +301,7 @@
 				23A77FAE161E86100054A129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

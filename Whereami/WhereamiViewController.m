@@ -31,9 +31,6 @@
         
         [locationManager setDistanceFilter:50];
         
-        // Tell our manager to start looking for its location immediately
-        [locationManager startUpdatingLocation];
-        
         // Tell our manager to update its headings
         if ([CLLocationManager headingAvailable]) {
             [locationManager startUpdatingHeading];
@@ -69,6 +66,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [worldView setShowsUserLocation:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,6 +79,13 @@
 - (void)dealloc
 {
     [locationManager setDelegate:nil];
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
+    [worldView setRegion:region animated:YES];
 }
 
 @end
