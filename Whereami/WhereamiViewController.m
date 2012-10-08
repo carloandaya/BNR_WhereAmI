@@ -33,6 +33,16 @@
         
         // Tell our manager to start looking for its location immediately
         [locationManager startUpdatingLocation];
+        
+        // Tell our manager to update its headings
+        if ([CLLocationManager headingAvailable]) {
+            [locationManager startUpdatingHeading];
+        }
+        else
+        {
+            NSLog(@"Heading information not available");
+        }
+    
     }
     
     return self;
@@ -47,6 +57,12 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"Could not find location: %@", error);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+    NSLog(@"Magnetic Heading: %f", [newHeading magneticHeading]);
+    NSLog(@"True Heading: %f", [newHeading trueHeading]);
 }
 
 - (void)viewDidLoad
