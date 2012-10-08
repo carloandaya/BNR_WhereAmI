@@ -68,6 +68,7 @@
         {
             NSLog(@"Heading information not available");
         }
+        
     
     }
     
@@ -106,6 +107,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [worldView setShowsUserLocation:YES];
+    [worldView setMapType:MKMapTypeSatellite];
 }
 
 - (void)didReceiveMemoryWarning
