@@ -19,6 +19,7 @@
     IBOutlet MKMapView *worldView;
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITextField *locationTitleField;
+    IBOutlet UISegmentedControl *mapTypeSelector;
 }
 
 // findLocation will tell the locationManager to start looking for the current location.
@@ -30,5 +31,7 @@
 // It will also handle the map's zoom and reset the states of the UI elements
 // and the locationManager.
 - (void)foundLocation:(CLLocation *)loc;
+
+- (void)didSelectMapType;
 
 @end

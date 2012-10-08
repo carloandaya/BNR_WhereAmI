@@ -108,6 +108,14 @@
     
     [worldView setShowsUserLocation:YES];
     [worldView setMapType:MKMapTypeSatellite];
+    
+    NSLog(@"The map type is: %d", [worldView mapType]);
+    [mapTypeSelector setSelectedSegmentIndex:[worldView mapType]];
+    
+    // Set up the map type selector
+    [mapTypeSelector addTarget:self
+                        action:@selector(didSelectMapType)
+              forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning
@@ -135,6 +143,15 @@
     [textField resignFirstResponder];
     
     return YES;
+}
+
+- (void)didSelectMapType
+{
+    //NSLog(@"Segmented control value is: %d", [mapTypeSelector selectedSegmentIndex]);
+    
+    // Set the map type according to the value of mapTypeSelector.
+    // Remember that enums can be represented by integers.
+    [worldView setMapType:[mapTypeSelector selectedSegmentIndex]];
 }
 
 @end
