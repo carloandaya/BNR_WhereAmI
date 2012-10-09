@@ -18,6 +18,9 @@
 // This is a required property from MKAnnotation
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
+// This property will be used to display the date the annotation was created
+@property (nonatomic, readonly, copy) NSString *subtitle;
+
 // This is an optional property from MKAnnotation
 @property (nonatomic, copy) NSString *title;
 

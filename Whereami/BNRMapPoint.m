@@ -10,14 +10,22 @@
 
 @implementation BNRMapPoint
 
-@synthesize coordinate, title;
+@synthesize coordinate, title, subtitle;
 
 // This is the designated initializer
 - (id)initWithCoordinate:(CLLocationCoordinate2D)c title:(NSString *)t
 {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle]; // do not display the time
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    NSDate *date = [NSDate date];
+    
+    
     self = [super init];
     if (self) {
         coordinate = c;
+        subtitle = [dateFormatter stringFromDate:date];
         [self setTitle:t];
     }
     return self;
